@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
 
     /*
     we need to use this when we are in the same component and want to access the params value dynamically without reloading the whole component
+    If you use subscribe then you must need to unsubscribe it in the ngOnDestroy() life cycle because even the component will destroy but subscription data live in the memory
     */
     this.route.params.subscribe((params: Params) => {
       this.user = {
