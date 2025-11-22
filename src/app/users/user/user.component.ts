@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,26 +8,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class UserComponent implements OnInit {
   user: {id: number, name: string};
 
-  constructor(private route:ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    // snapshot use when component is loaded
-    this.user = {
-      id: this.route.snapshot.params['id'],
-      name: this.route.snapshot.params['name'],
-    };
-
-    /*
-    we need to use this when we are in the same component and want to access the params value dynamically without reloading the whole component
-    If you use subscribe then you must need to unsubscribe it in the ngOnDestroy() life cycle because even the component will destroy but subscription data live in the memory
-    */
-    this.route.params.subscribe((params: Params) => {
-      this.user = {
-        id: params['id'],
-        name: params['name'],
-      };
-    });
-    console.log(this.user);
   }
 
 }
