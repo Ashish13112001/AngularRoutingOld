@@ -26,4 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-this.router.navigate([],{}) method have two section one is array(route) second is object(activatedRoute,queryParams) and all -- analyse this
+1 -- this.router.navigate([],{}) method have two section one is array(route) second is object(activatedRoute,queryParams) and all -- analyse this
+
+2 -- pathMatch is required ONLY when using redirectTo, because Redirects can accidentally match every route --> ex: { path: '', redirectTo: '/home', pathMatch: 'full' } every route star with ''.
