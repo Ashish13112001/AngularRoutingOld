@@ -21,7 +21,8 @@ const appRoutes: Routes = [
   {
     path: 'servers',
     component: ServersComponent,
-    canActivate: [AuthGuard], //This route only accessable when guardService return true
+    //canActivate: [AuthGuard], //This route only accessable when guardService return true
+    canActivateChild: [AuthGuard],
     children: [
       { path: ':id', component: ServerComponent },
       { path: ':id/edit', component: EditServerComponent },
